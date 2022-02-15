@@ -1,3 +1,5 @@
+# By Steven Au
+# Motivation: Converts an Excel file with multiple sheets into a JSON object.
 import pathlib as pl
 import json
 import pandas as pd
@@ -5,6 +7,7 @@ import pandas as pd
 
 class ExcelJson:
     """ Converts a standard Excel file into a JSON object. For use with quick conversions."""
+    
     def __init__(self, path=None):
         self.path = path
         self.excel_file = {}
@@ -58,8 +61,3 @@ class ExcelJson:
 if __name__ == "__main__":
     E2J = ExcelJson()
     E2J.operation_sequence()
-
-
-
-
-
