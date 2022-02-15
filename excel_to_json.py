@@ -1,5 +1,5 @@
 # By Steven Au
-# Motivation: Converts an Excel file with multiple sheets into a JSON object.
+# Motivation: Converts an Excel file with multiple sheets into a JSON file.
 import pathlib as pl
 import json
 import pandas as pd
