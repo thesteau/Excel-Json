@@ -45,7 +45,7 @@ class ExcelJson:
                 sheet += 1
         except:
             # File name is the base dictionary => encapsulates the rest of the excel data dictionary
-            self.excel_file[self.get_file_stem] = excel_object
+            self.excel_file[self.get_file_stem()] = excel_object
             print("Excel Parsed.")
 
     def json_export(self):
