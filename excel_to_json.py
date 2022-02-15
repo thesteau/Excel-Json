@@ -53,7 +53,11 @@ class ExcelJson:
             json_file.write(json_object)
 
     def operation_sequence(self):
-        self.set_path()
+        """ Linear sequence of operations."""
+        if self.path is None:
+            # In the event that the user had not initialized with a direct path, then set the path.
+            self.set_path()
+            
         self.excel_magic()
         self.json_export()
 
