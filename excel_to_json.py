@@ -41,7 +41,7 @@ class ExcelJson:
         try:
             while True:
                 sheet_name = self.get_parse_excel().sheet_names[sheet]
-                excel_object[sheet_name] = self.get_parse_excel().parse(sheet_name).to_dict()
+                excel_object[sheet_name] = self.get_parse_excel().parse(sheet_name).fillna("NaN").to_dict()
                 sheet += 1
         except:
             # File name is the base dictionary => encapsulates the rest of the excel data dictionary
@@ -53,7 +53,7 @@ class ExcelJson:
         json_object = json.dumps(self.excel_file)
         json_path = self.get_parent_path().joinpath(self.get_file_stem() + ".json")
 
-        with open(json_path, "w") as json_file:
+        with open(json_path, "w", encoding='utf-8') as json_file:
             json_file.write(json_object)
 
     def operation_sequence(self):
